@@ -11,34 +11,40 @@ const testimonials = [
   },
 ];
 
-const addTestimonials = () => {
-  const container = document.createElement("div");
-  container.classList.add("testimonials-container");
+let currentIndex = 0;
 
-  testimonials.forEach((testimonial) => {
-    const newDiv = document.createElement("div");
-    newDiv.classList.add("testimonial-card");
+const container = document.createElement("div");
+container.classList.add("testimonials-container");
+document.body.appendChild(container);
 
-    const newImg = document.createElement("img");
-    newImg.classList.add("testimonial-img");
-    newImg.src = testimonial.photoUrl;
-    newImg.alt = "Foto " + testimonial.name;
+const newDiv = document.createElement("div");
+newDiv.classList.add("testimonial-card");
 
-    const newP = document.createElement("p");
-    newP.classList.add("testimonial-p");
-    newP.textContent = testimonial.text;
+const newImg = document.createElement("img");
+newImg.classList.add("testimonial-img");
 
-    const headingFour = document.createElement("h4");
-    headingFour.classList.add("testimonial-heading");
-    headingFour.textContent = testimonial.name;
+const newP = document.createElement("p");
+newP.classList.add("testimonial-p");
 
-    newDiv.appendChild(newImg);
-    newDiv.appendChild(newP);
-    newDiv.appendChild(headingFour);
+const headingFour = document.createElement("h4");
+headingFour.classList.add("testimonial-heading");
 
-    container.appendChild(newDiv);
-  });
+newDiv.appendChild(newImg);
+newDiv.appendChild(newP);
+newDiv.appendChild(headingFour);
+container.appendChild(newDiv);
+const updateTestimonials = () => {
+  const { name, photoUrl, text } = testimonials[currentIndex];
+  newImg.src = photoUrl;
+  newImg.alt = `Foto ${name}`;
+  newP.textContent = text;
+  headingFour.textContent = name;
+
+  currentIndex = (currentIndex + 1) % testimonials.length;
 };
+
+updateTestimonials();
+setInterval(updateTestimonials, 2000);
 
 const style = document.createElement("style");
 style.textContent = `
