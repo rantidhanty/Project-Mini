@@ -19,23 +19,10 @@ const addTestimonials = () => {
     const newDiv = document.createElement("div");
     newDiv.classList.add("testimonial-card");
 
-    // // 🔹 Styling langsung dengan JS
-    // newDiv.style.border = "1px solid #ccc";
-    // newDiv.style.padding = "20px";
-    // newDiv.style.margin = "10px";
-    // newDiv.style.borderRadius = "10px";
-    // newDiv.style.textAlign = "center";
-    // newDiv.style.boxShadow = "0px 4px 6px rgba(0,0,0,0.1)";
-
     const newImg = document.createElement("img");
     newImg.classList.add("testimonial-img");
     newImg.src = testimonial.photoUrl;
     newImg.alt = "Foto " + testimonial.name;
-
-    // 🔹 Styling gambar langsung
-    // newImg.style.width = "100px";
-    // newImg.style.height = "100px";
-    // newImg.style.borderRadius = "50%";
 
     const newP = document.createElement("p");
     newP.classList.add("testimonial-p");
@@ -44,11 +31,6 @@ const addTestimonials = () => {
     const headingFour = document.createElement("h4");
     headingFour.classList.add("testimonial-heading");
     headingFour.textContent = testimonial.name;
-
-    // 🔹 Styling nama heading
-    // headingFour.style.fontSize = "18px";
-    // headingFour.style.fontWeight = "bold";
-    // headingFour.style.marginTop = "10px";
 
     newDiv.appendChild(newImg);
     newDiv.appendChild(newP);
