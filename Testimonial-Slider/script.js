@@ -48,18 +48,24 @@ setInterval(updateTestimonials, 2000);
 
 const style = document.createElement("style");
 style.textContent = `
-//   .testimonials-container {
-//     display: flex;
-//     justify-content: center;
-//     gap: 20px;
-//   }
+  .testimonials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: rgba(117, 130, 150);
+    gap: clamp(10px, 2vw, 20px);
+  }
 
   .testimonial-card {
     border: 1px solid #ccc;
-    padding: 20px;
+    padding: clamp(15px, 3vw, 30px);
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    background-color: white;
+    width: clamp(250px, 50vw, 400px);
   }
 
   .testimonial-img {
