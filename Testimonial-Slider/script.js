@@ -86,5 +86,3 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
-
-document.body.onload = addTestimonials;
